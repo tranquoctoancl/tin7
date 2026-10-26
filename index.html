@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ĐỀ KIỂM TRA GIỮA KÌ 1</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 15px; line-height: 1.6; padding-top: 70px; overflow-x: hidden; }
+        .header-bar { position: fixed; top: 0; left: 0; width: 100%; background: #0056b3; color: white; padding: 10px 15px; z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .header-bar h2 { margin: 0; font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 65%; }
+        #timer { font-size: 16px; font-weight: bold; background: #dc3545; padding: 5px 10px; border-radius: 5px; white-space: nowrap; }
+        
+        .zalo-warning { background: #fff3cd; color: #856404; padding: 10px; border: 1px solid #ffeeba; border-radius: 5px; margin-bottom: 15px; font-weight: bold; text-align: justify; font-size: 14px; }
+        
+        h3 { color: #0056b3; border-bottom: 2px solid #0056b3; padding-bottom: 5px; margin-top: 30px; text-transform: uppercase; font-size: 18px; }
+        .info-group { margin-bottom: 15px; }
+        .info-group input { width: 100%; padding: 12px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        
+        .question { background: #f9f9f9; padding: 15px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ddd; box-sizing: border-box; width: 100%; overflow-x: auto; }
+        .question-text { white-space: pre-wrap; margin-bottom: 15px; word-wrap: break-word; } 
+        
+        mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+        
+        .options label { display: block; padding: 10px; margin: 8px 0; background: #fff; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .options label:hover { background: #e9e9e9; }
+        
+        .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 15px 0; }
+        .tf-table { width: 100%; border-collapse: collapse; background: #fff; min-width: 320px; }
+        .tf-table td { padding: 10px; border: 1px solid #ccc; }
+        .tf-radio-group { display: flex; gap: 10px; justify-content: center; }
+        .tf-radio-group label { cursor: pointer; font-weight: bold; padding: 5px; border-radius: 3px; transition: 0.3s; }
+        
+        .short-ans-group { display: flex; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
+        .short-ans-box { width: 50px; height: 55px; font-size: 24px; text-align: center; border: 2px solid #007bff; border-radius: 8px; box-sizing: border-box; font-weight: bold; color: #0056b3; background: #fff; transition: 0.3s; }
+        .short-ans-box:focus { border-color: #dc3545; outline: none; box-shadow: 0 0 8px rgba(220,53,69,0.4); }
+        
+        .essay-input { width: 100%; padding: 12px; font-size: 16px; border: 2px solid #6c757d; border-radius: 5px; box-sizing: border-box; height: 150px; resize: vertical; }
+        
+        .solution-box { display: none; margin-top: 15px; padding: 15px; background: #e2f3f5; border-left: 5px solid #17a2b8; border-radius: 5px; overflow-x: auto; }
+        
+        button.submit-btn { width: 100%; padding: 15px; background: #28a745; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 15px; font-weight: bold; margin-bottom: 5px; }
+        #result { display: none; margin-top: 20px; padding: 15px; border-radius: 5px; text-align: center; font-weight: bold; font-size: 18px; background: #d4edda; color: #155724; border: 1px solid #c3e6cb; margin-bottom: 20px;}
+        
+        #passwordPrompt { display: none; margin-top: 20px; padding: 20px; background: #fff3cd; border: 1px solid #ffeeba; border-radius: 8px; text-align: center; margin-bottom: 40px; }
+        #passwordPrompt h4 { color: #856404; margin-top: 0; margin-bottom: 10px; }
+        #passwordPrompt input { padding: 10px; width: 60%; max-width: 250px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        #passwordPrompt button { width: auto; padding: 10px 20px; background: #17a2b8; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; font-weight: bold; margin-top: 10px; margin-left: 10px; }
+        
+        svg { max-width: 100%; height: auto; display: block; margin: 10px auto; }
+    </style>
+    
+    <script>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\\[','\\]']],
+            processEscapes: true
+          },
+          options: { enableMenu: false }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.min.js"></script>
+</head>
+<body>
+    <div class="header-bar">
+        <h2>ĐỀ KIỂM TRA GIỮA KÌ 1</h2>
+        <div id="timer">Đang tải...</div>
+    </div>
+    
+    <div class="zalo-warning" id="zaloWarning">
+        ⚠️ CHÚ Ý: Nếu em đang mở bài này trực tiếp trên Zalo/Messenger, hãy bấm vào biểu tượng "Dấu 3 chấm" ở góc phải màn hình và chọn "Mở bằng trình duyệt" (Chrome/Safari) để không bị lỗi kết nối.
+    </div>
+
+    <div style="background: #e9ecef; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-size: 14.5px; border-left: 5px solid #0056b3; line-height: 1.5;">
+        <b style="color: #0056b3;">Barem chấm điểm (Theo chuẩn Bộ GD&ĐT):</b>
+        <ul style="margin: 5px 0 0 0; padding-left: 20px;">
+            <li><b>Phần I (Trắc nghiệm 4 lựa chọn):</b> 0,25 điểm / câu.</li>
+            <li><b>Phần II (Trắc nghiệm Đúng/Sai):</b> Điểm tối đa 1 điểm / câu (Đúng 1 ý: 0,1đ | 2 ý: 0,25đ | 3 ý: 0,5đ | 4 ý: 1,0đ).</li>
+            <li><b>Phần III (Trả lời ngắn):</b> 0,5 điểm / câu.</li>
+        </ul>
+    </div>
+    <div class="info-group">
+        <label>Họ và tên học sinh:</label>
+        <input type="text" id="studentName" placeholder="Nhập họ và tên..." required>
+    </div>
+    <div class="info-group">
+        <label>Lớp:</label>
+        <input type="text" id="studentClass" placeholder="Nhập lớp..." required>
+    </div>
+
+    <hr>
+    <form id="quizForm">
+        <h3>PHẦN 1. Câu trắc nghiệm nhiều phương án lựa chọn</h3>
+            <div class="question">
+                <div class="question-text"><b>Câu 1:</b> Ưu điểm nổi bật của hình thức sao lưu dữ liệu bằng công nghệ đám mây (Cloud Storage) so với sao lưu ra thẻ nhớ USB là gì?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_1" value="A"> 
+                            <b>A.</b> Có thể truy cập dữ liệu từ bất kỳ máy tính nào có kết nối Internet mà không lo rơi mất thiết bị vật lý
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_1" value="B"> 
+                            <b>B.</b> Không bao giờ yêu cầu kết nối mạng Internet khi muốn lấy lại dữ liệu
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_1" value="C"> 
+                            <b>C.</b> Dung lượng lưu trữ luôn hoàn toàn miễn phí không giới hạn
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_1" value="D"> 
+                            <b>D.</b> Dữ liệu luôn được bảo mật tuyệt đối 100\% mà không cần mật khẩu
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 2:</b> Thành phần nào dưới đây của máy tính đóng vai trò tiếp nhận thông tin từ bên ngoài và chuyển thành dữ liệu số cho máy tính xử lý?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_2" value="A"> 
+                            <b>A.</b> Thiết bị vào
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_2" value="B"> 
+                            <b>B.</b> Thiết bị ra
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_2" value="C"> 
+                            <b>C.</b> Bộ xử lý
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_2" value="D"> 
+                            <b>D.</b> Bộ nhớ trong
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 3:</b> Phần mềm nào dưới đây được tích hợp sẵn trong hệ điều hành Windows để trợ giúp quản lý tệp và thư mục?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_3" value="A"> 
+                            <b>A.</b> \( File Explorer \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_3" value="B"> 
+                            <b>B.</b> \( Microsoft Paint \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_3" value="C"> 
+                            <b>C.</b> \( Avira Free Antivirus \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_3" value="D"> 
+                            <b>D.</b> \( Windows Media Player \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 4:</b> Hành vi nào sau đây là KHÔNG NÊN làm khi làm việc với máy tính để bàn?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_4" value="A"> 
+                            <b>A.</b> Để ly nước ngọt ngay bên cạnh bàn phím và chuột khi đang sử dụng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_4" value="B"> 
+                            <b>B.</b> Sử dụng nút lệnh Shut down trong hệ điều hành để tắt máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_4" value="C"> 
+                            <b>C.</b> Vệ sinh bàn phím bằng cọ mềm sau khi đã ngắt điện máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_4" value="D"> 
+                            <b>D.</b> Đóng toàn bộ các ứng dụng trước khi thực hiện tắt máy
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 5:</b> Nhược điểm chính của việc chỉ thực hiện sao lưu cục bộ (Local Backup) trên cùng một ổ cứng vật lý của máy tính là gì?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_5" value="A"> 
+                            <b>A.</b> Tốc độ sao chép dữ liệu cục bộ chậm hơn rất nhiều so với truyền qua mạng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_5" value="B"> 
+                            <b>B.</b> Nếu ổ cứng máy tính bị hỏng nặng thì cả dữ liệu gốc lẫn bản sao lưu đều bị mất
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_5" value="C"> 
+                            <b>C.</b> Không thể khôi phục lại dữ liệu nếu không có kết nối Internet
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_5" value="D"> 
+                            <b>D.</b> Làm cho máy tính bị nhiễm virus ngay lập tức
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 6:</b> Tấm cảm ứng (touchpad) trên máy tính xách tay đảm nhận vai trò tương đương với thiết bị nào dưới đây?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_6" value="A"> 
+                            <b>A.</b> Chuột máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_6" value="B"> 
+                            <b>B.</b> Bàn phím gõ chữ
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_6" value="C"> 
+                            <b>C.</b> Máy in
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_6" value="D"> 
+                            <b>D.</b> Màn hình hiển thị
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 7:</b> Khi quan sát tên tệp TranhVe.png, phần mở rộng .png cho người dùng biết thông tin gì?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_7" value="A"> 
+                            <b>A.</b> Tệp thuộc loại văn bản soạn thảo bằng Microsoft Word
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_7" value="B"> 
+                            <b>B.</b> Tệp chứa âm thanh bài hát
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_7" value="C"> 
+                            <b>C.</b> Tệp thuộc loại hình ảnh và có thể mở bằng ứng dụng xem/chỉnh sửa ảnh
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_7" value="D"> 
+                            <b>D.</b> Tệp là một bản trình chiếu PowerPoint
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 8:</b> Việc chụp ảnh đề thi trong giờ thi rồi đăng lên mạng xã hội nhờ giải hộ là hành vi như thế nào?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_8" value="A"> 
+                            <b>A.</b> Việc làm hoàn toàn hợp pháp và không bị xử lý
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_8" value="B"> 
+                            <b>B.</b> Vi phạm quy chế thi và vi phạm quy định sử dụng thông tin sai trái trên mạng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_8" value="C"> 
+                            <b>C.</b> Cách giao lưu bạn bè được nhà trường ủng hộ
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_8" value="D"> 
+                            <b>D.</b> Hành vi sáng tạo cần được khuyến khích trong học tập
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 9:</b> Tác hại nghiêm trọng nào có thể xảy ra nếu người dùng tự ý đưa thông tin cá nhân chi tiết (như số căn cước, địa chỉ nhà, mật khẩu) lên mạng xã hội?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_9" value="A"> 
+                            <b>A.</b> Làm cho máy tính bị hỏng phần cứng ngay lập tức
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_9" value="B"> 
+                            <b>B.</b> Dữ liệu trên máy tính bị xóa sạch
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_9" value="C"> 
+                            <b>C.</b> Bị hệ điều hành tự động khóa máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_9" value="D"> 
+                            <b>D.</b> Nguy cơ bị kẻ xấu lợi dụng để lừa đảo, giả mạo hoặc đánh cắp tài khoản
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 10:</b> Điều gì sẽ xảy ra nếu một máy tính hoàn toàn chưa được cài đặt Hệ điều hành?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_10" value="A"> 
+                            <b>A.</b> Máy tính tự động chạy phần mềm diệt virus
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_10" value="B"> 
+                            <b>B.</b> Máy tính không thể khởi động để chạy bất kỳ phần mềm ứng dụng nào
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_10" value="C"> 
+                            <b>C.</b> Máy tính vẫn soạn thảo được văn bản nhưng không lướt web được
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_10" value="D"> 
+                            <b>D.</b> Máy tính chỉ chạy được các trò chơi điện tử nhẹ
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 11:</b> Mục đích chính của phần mềm ứng dụng Scratch khi được đưa vào môi trường mạng xã hội học tập là gì?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_11" value="A"> 
+                            <b>A.</b> Tạo môi trường để học sinh học lập trình, chia sẻ sản phẩm sáng tạo và thảo luận
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_11" value="B"> 
+                            <b>B.</b> Thay thế các hệ điều hành máy tính như Windows
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_11" value="C"> 
+                            <b>C.</b> Chuyên dùng để chỉnh sửa ảnh chuyên nghiệp
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_11" value="D"> 
+                            <b>D.</b> Cung cấp dịch vụ gửi thư điện tử bảo mật cao cho doanh nghiệp
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 12:</b> Trong các mật khẩu sau, mật khẩu nào được đánh giá là mật khẩu mạnh và có tính bảo mật cao nhất?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_12" value="A"> 
+                            <b>A.</b> \( H@iPhong2026! \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_12" value="B"> 
+                            <b>B.</b> \( namhaiphong \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_12" value="C"> 
+                            <b>C.</b> \( 0912345678 \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_12" value="D"> 
+                            <b>D.</b> \( 12345678 \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 13:</b> Thao tác nào dưới đây đảm bảo an toàn điện nhất khi tiến hành lắp ráp các dây kết nối ngoại vi cho máy tính để bàn?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_13" value="A"> 
+                            <b>A.</b> Kết nối tất cả các thiết bị ngoại vi trước rồi mới cắm dây nguồn vào ổ điện
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_13" value="B"> 
+                            <b>B.</b> Cắm dây nguồn vào ổ điện trước để kiểm tra nguồn điện rồi mới kết nối các thiết bị khác
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_13" value="C"> 
+                            <b>C.</b> Bật công tắc nguồn điện trước khi cắm dây cáp tín hiệu màn hình
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_13" value="D"> 
+                            <b>D.</b> Vừa cắm dây nguồn vừa cắm cáp màn hình và bàn phím
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 14:</b> Để lưu trữ dữ liệu an toàn phòng trường hợp máy tính cá nhân bị hỏng hóc hoặc mất mát, giải pháp nào dưới đây là hiệu quả nhất?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_14" value="A"> 
+                            <b>A.</b> Thực hiện sao lưu dữ liệu sang ổ cứng ngoài hoặc dịch vụ lưu trữ đám mây
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_14" value="B"> 
+                            <b>B.</b> Đổi tên tệp thành tên dài hơn để khó bị xóa
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_14" value="C"> 
+                            <b>C.</b> Tạo thật nhiều thư mục con trùng tên trên cùng một ổ đĩa
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_14" value="D"> 
+                            <b>D.</b> Nén tệp và để nguyên trong thư mục cũ
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 15:</b> Phát biểu nào dưới đây là ĐÚNG khi nói về việc đăng tải thông tin lên mạng xã hội?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_15" value="A"> 
+                            <b>A.</b> Người dùng có quyền đăng bất kỳ thông tin gì dù đúng hay sai mà không sợ bị phạt
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_15" value="B"> 
+                            <b>B.</b> Đưa thông tin sai sự thật lên mạng là hành vi vi phạm pháp luật và có thể bị xử phạt
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_15" value="C"> 
+                            <b>C.</b> Đăng bài ẩn danh thì pháp luật không thể tìm ra và xử lý
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_15" value="D"> 
+                            <b>D.</b> Thông tin trên mạng xã hội luôn luôn đúng sự thật 100\%
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 16:</b> Khái niệm nào dưới đây miêu tả đúng nhất về Mạng xã hội?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_16" value="A"> 
+                            <b>A.</b> Mạng xã hội là một cộng đồng trực tuyến cho phép mọi người kết nối, giao lưu và chia sẻ thông tin
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_16" value="B"> 
+                            <b>B.</b> Mạng xã hội là bảng thông báo bằng giấy được treo tại cổng trường
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_16" value="C"> 
+                            <b>C.</b> Mạng xã hội là hệ thống dây cáp mạng nối các máy tính trong cùng một phòng học
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_16" value="D"> 
+                            <b>D.</b> Mạng xã hội là một phần mềm chống virus chạy trên máy tính cá nhân
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 17:</b> Chương trình nào dưới đây là một hệ điều hành dành cho máy tính cá nhân?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_17" value="A"> 
+                            <b>A.</b> \( Google Chrome \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_17" value="B"> 
+                            <b>B.</b> \( Unikey \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_17" value="C"> 
+                            <b>C.</b> \( Linux \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_17" value="D"> 
+                            <b>D.</b> \( Microsoft Word \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 18:</b> Phát biểu nào sau đây thể hiện đúng mối quan hệ giữa Hệ điều hành và Phần mềm ứng dụng?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_18" value="A"> 
+                            <b>A.</b> Phần mềm ứng dụng muốn chạy được phải làm việc trong môi trường do hệ điều hành cung cấp
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_18" value="B"> 
+                            <b>B.</b> Hệ điều hành chỉ có thể hoạt động sau khi đã cài đặt đầy đủ các phần mềm ứng dụng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_18" value="C"> 
+                            <b>C.</b> Hệ điều hành và phần mềm ứng dụng là hai tên gọi khác nhau của cùng một loại chương trình
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_18" value="D"> 
+                            <b>D.</b> Phần mềm ứng dụng có thể tương tác trực tiếp với phần cứng mà không cần hệ điều hành
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 19:</b> Thiết bị nào sau đây nhận dữ liệu từ máy tính và xuất ra môi trường bên ngoài dưới dạng âm thanh mà con người có thể nghe được?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_19" value="A"> 
+                            <b>A.</b> Tấm cảm ứng (Touchpad)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_19" value="B"> 
+                            <b>B.</b> \( Loa \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_19" value="C"> 
+                            <b>C.</b> Máy quét (Scanner)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_19" value="D"> 
+                            <b>D.</b> \( Micro \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 20:</b> Độ tuổi tối thiểu phổ biến mà nhiều nền tảng mạng xã hội lớn (như Facebook) quy định để người dùng đăng ký tài khoản thành viên là bao nhiêu?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_20" value="A"> 
+                            <b>A.</b> Từ 18 tuổi trở lên
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_20" value="B"> 
+                            <b>B.</b> Không giới hạn độ tuổi
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_20" value="C"> 
+                            <b>C.</b> Từ 13 tuổi trở lên
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_20" value="D"> 
+                            <b>D.</b> Từ 6 tuổi trở lên
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 21:</b> Kênh trao đổi thông tin nào trên Internet thường được tổ chức theo các chủ đề thảo luận để các thành viên gửi bài viết và phản hồi ý kiến?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_21" value="A"> 
+                            <b>A.</b> Thẻ nhớ SD
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_21" value="B"> 
+                            <b>B.</b> Diễn đàn trực tuyến (Forum)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_21" value="C"> 
+                            <b>C.</b> Dịch vụ lưu trữ nội bộ
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_21" value="D"> 
+                            <b>D.</b> Cổng kết nối USB
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 22:</b> Trong ứng dụng quản lý tệp File Explorer, thao tác nhấp chuột phải vào thư mục và chọn lệnh Cut, sau đó sang thư mục mới chọn Paste sẽ thực hiện công việc gì?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_22" value="A"> 
+                            <b>A.</b> Di chuyển thư mục từ vị trí cũ sang vị trí mới
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_22" value="B"> 
+                            <b>B.</b> Xóa vĩnh viễn thư mục khỏi máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_22" value="C"> 
+                            <b>C.</b> Tạo một bản sao mới của thư mục ở vị trí mới
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_22" value="D"> 
+                            <b>D.</b> Đổi tên thư mục thành tên mới
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 23:</b> Thiết bị nào dưới đây có chức năng thu nhận hình ảnh/video từ bên ngoài để đưa vào máy tính xử lý hoặc lưu trữ?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_23" value="A"> 
+                            <b>A.</b> \( Tai nghe \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_23" value="B"> 
+                            <b>B.</b> Loa thông minh
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_23" value="C"> 
+                            <b>C.</b> \( Webcam \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_23" value="D"> 
+                            <b>D.</b> Máy in
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 24:</b> Tệp tin có phần mở rộng là .docx thường được mở và xử lý bằng loại phần mềm ứng dụng nào?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_24" value="A"> 
+                            <b>A.</b> Phần mềm trình chiếu
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_24" value="B"> 
+                            <b>B.</b> Phần mềm soạn thảo văn bản
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_24" value="C"> 
+                            <b>C.</b> Phần mềm chỉnh sửa video
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_24" value="D"> 
+                            <b>D.</b> Phần mềm nén dữ liệu
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 25:</b> Để chia sẻ một hình ảnh kỉ niệm chuyến tham quan lên trang Facebook cá nhân, người dùng cần nhấp vào nút chức năng nào trong khung đăng bài?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_25" value="A"> 
+                            <b>A.</b> Ảnh/Video
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_25" value="B"> 
+                            <b>B.</b> Tin nhắn riêng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_25" value="C"> 
+                            <b>C.</b> Tạo sự kiện
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_25" value="D"> 
+                            <b>D.</b> Đổi mật khẩu
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 26:</b> Khi một thư mục chứa các tệp con bị xóa bằng lệnh Delete, điều gì sẽ xảy ra với các tệp con bên trong thư mục đó?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_26" value="A"> 
+                            <b>A.</b> Các tệp con vẫn tồn tại ở vị trí cũ nhưng không thấy thư mục mẹ
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_26" value="B"> 
+                            <b>B.</b> Hệ thống sẽ báo lỗi và không cho phép xóa thư mục
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_26" value="C"> 
+                            <b>C.</b> Tất cả các tệp con bên trong cũng sẽ bị xóa cùng với thư mục đó
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_26" value="D"> 
+                            <b>D.</b> Các tệp con tự động chuyển ra màn hình Desktop
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 27:</b> Để phòng chống phần mềm độc hại (malware, virus) xâm nhập máy tính, hành động nào dưới đây là ĐÚNG ĐẮN?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_27" value="A"> 
+                            <b>A.</b> Tải và cài đặt các phần mềm không rõ nguồn gốc trôi nổi trên mạng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_27" value="B"> 
+                            <b>B.</b> Mở tất cả các tệp đính kèm trong thư rác gửi từ người lạ
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_27" value="C"> 
+                            <b>C.</b> Tắt hoàn toàn bức tường lửa và phần mềm bảo vệ hệ thống
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_27" value="D"> 
+                            <b>D.</b> Cài đặt và luôn bật chế độ bảo vệ của phần mềm chống virus tin cậy
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 28:</b> Loại phần mềm nào giữ vai trò quản lý, điều khiển toàn bộ phần cứng và tạo môi trường để các ứng dụng khác hoạt động trên máy tính?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_28" value="A"> 
+                            <b>A.</b> Phần mềm soạn thảo văn bản
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_28" value="B"> 
+                            <b>B.</b> Phần mềm ứng dụng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_28" value="C"> 
+                            <b>C.</b> Trình duyệt web
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_28" value="D"> 
+                            <b>D.</b> Hệ điều hành
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 29:</b> Sự khác biệt cơ bản nhất giữa loa thông thường và loa thông minh là gì?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_29" value="A"> 
+                            <b>A.</b> Loa thông thường chỉ kết nối được với điện thoại chứ không kết nối được máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_29" value="B"> 
+                            <b>B.</b> Loa thông minh bắt buộc phải đi kèm màn hình hiển thị hình ảnh
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_29" value="C"> 
+                            <b>C.</b> Loa thông minh có thể nhận lệnh bằng giọng nói và hỗ trợ trao đổi dữ liệu qua mạng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_29" value="D"> 
+                            <b>D.</b> Loa thông minh không thể phát ra âm thanh cho con người nghe
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 30:</b> Nếu cắm nhầm đầu nối tai nghe vào cổng cắm micro trên máy tính, hiện tượng nào nhiều khả năng sẽ xảy ra?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_30" value="A"> 
+                            <b>A.</b> Màn hình máy tính bị tắt đột ngột
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_30" value="B"> 
+                            <b>B.</b> Máy tính bị sập nguồn ngay lập tức
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_30" value="C"> 
+                            <b>C.</b> Tai nghe không phát ra âm thanh từ máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_30" value="D"> 
+                            <b>D.</b> Mặt khẩu máy tính bị xóa
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 31:</b> Thiết bị nào sau đây vừa có khả năng tiếp nhận thao tác điều khiển của người dùng vừa có thể hiển thị kết quả xử lý?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_31" value="A"> 
+                            <b>A.</b> Máy chiếu
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_31" value="B"> 
+                            <b>B.</b> Bàn phím cơ
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_31" value="C"> 
+                            <b>C.</b> Màn hình máy tính thông thường
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_31" value="D"> 
+                            <b>D.</b> Màn hình cảm ứng
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 32:</b> Trang web nào dưới đây cung cấp dịch vụ mạng xã hội chuyên về chia sẻ và xem các video trực tuyến?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_32" value="A"> 
+                            <b>A.</b> \( Wikipedia \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_32" value="B"> 
+                            <b>B.</b> \( Google Drive \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_32" value="C"> 
+                            <b>C.</b> \( Microsoft Word \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_32" value="D"> 
+                            <b>D.</b> \( YouTube \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 33:</b> Phần mềm nào sau đây là hệ điều hành phổ biến được thiết kế dành riêng cho thiết bị di động như điện thoại thông minh?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_33" value="A"> 
+                            <b>A.</b> \( MS Paint \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_33" value="B"> 
+                            <b>B.</b> \( Android \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_33" value="C"> 
+                            <b>C.</b> \( Windows 10 \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_33" value="D"> 
+                            <b>D.</b> \( macOS \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 34:</b> Tại sao chúng ta KHÔNG nên tự ý xóa hoặc di chuyển các tệp tin có phần mở rộng như .exe, .dll hay .sys trong các thư mục hệ thống?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_34" value="A"> 
+                            <b>A.</b> Vì các tệp này luôn là virus gây hại cho máy tính
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_34" value="B"> 
+                            <b>B.</b> Vì đó là các tệp chương trình hoặc tệp hệ thống có thể khiến máy tính bị lỗi hoạt động
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_34" value="C"> 
+                            <b>C.</b> Vì các tệp này chứa thông tin cá nhân như mật khẩu ngân hàng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_34" value="D"> 
+                            <b>D.</b> Vì xóa các tệp này sẽ làm tăng dung lượng ổ cứng đột ngột
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 35:</b> Cho tên tệp BaoCao.sb3. Tệp này thường được tạo ra từ phần mềm nào dưới đây?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_35" value="A"> 
+                            <b>A.</b> Phần mềm soạn thảo văn bản Word
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_35" value="B"> 
+                            <b>B.</b> Phần mềm trình chiếu PowerPoint
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_35" value="C"> 
+                            <b>C.</b> Trình duyệt web Microsoft Edge
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_35" value="D"> 
+                            <b>D.</b> Phần mềm lập trình trực quan Scratch
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 36:</b> Đâu là một ví dụ về việc sử dụng mạng xã hội một cách tích cực và đúng đắn của học sinh?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_36" value="A"> 
+                            <b>A.</b> Bình luận ác ý, bôi nhọ danh dự của bạn bè cùng trường
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_36" value="B"> 
+                            <b>B.</b> Sử dụng mạng xã hội để đăng tải hình ảnh đề thi khi chưa được phép
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_36" value="C"> 
+                            <b>C.</b> Lan truyền các thông tin giật gân, chưa kiểm chứng lên trang cá nhân
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_36" value="D"> 
+                            <b>D.</b> Tham gia các nhóm học tập để trao đổi kinh nghiệm và hỏi đáp bài tập
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 37:</b> Tệp có đuôi mở rộng .pptx đại diện cho định dạng dữ liệu nào?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_37" value="A"> 
+                            <b>A.</b> Âm thanh kỹ thuật số
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_37" value="B"> 
+                            <b>B.</b> Bài trình chiếu
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_37" value="C"> 
+                            <b>C.</b> Tệp chương trình hệ thống
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_37" value="D"> 
+                            <b>D.</b> \( Trang web \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 38:</b> Khi kết nối tai nghe có giắc cắm 3.5 mm vào máy tính để nghe nhạc, người dùng cần cắm vào cổng có đặc điểm nào để âm thanh truyền ra tai nghe?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_38" value="A"> 
+                            <b>A.</b> Cổng nhận tín hiệu micro màu hồng
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_38" value="B"> 
+                            <b>B.</b> Cổng xuất âm thanh có biểu tượng tai nghe
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_38" value="C"> 
+                            <b>C.</b> Cổng mạng Ethernet
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_38" value="D"> 
+                            <b>D.</b> Cổng cấp nguồn điện
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 39:</b> Nguyên tắc nào sau đây giúp việc tổ chức, lưu trữ tệp và thư mục trong máy tính trở nên khoa học và dễ tìm kiếm nhất?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_39" value="A"> 
+                            <b>A.</b> Lưu tất cả các tệp tin ra màn hình nền (Desktop) để tiện bấm mở
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_39" value="B"> 
+                            <b>B.</b> Đặt tên các thư mục bằng các ký tự ngẫu nhiên như abc, xyz123
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_39" value="C"> 
+                            <b>C.</b> Đặt tên thư mục ngắn gọn, rõ ràng và phản ánh đúng nội dung chứa bên trong
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_39" value="D"> 
+                            <b>D.</b> Không phân loại tệp mà để chung tất cả vào một thư mục duy nhất
+                        </label>
+                        </div>
+                
+            </div>
+            
+            <div class="question">
+                <div class="question-text"><b>Câu 40:</b> Tệp tin nào sau đây thuộc loại tệp chương trình máy tính (tệp chạy trực tiếp)?</div>
+                <div class="options">
+                        <label>
+                            <input type="radio" name="P1_Cau_40" value="A"> 
+                            <b>A.</b> \( AnhKyNiem.jpg \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_40" value="B"> 
+                            <b>B.</b> \( NhacHay.mp3 \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_40" value="C"> 
+                            <b>C.</b> \( Baitap.docx \)
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="P1_Cau_40" value="D"> 
+                            <b>D.</b> \( Setup.exe \)
+                        </label>
+                        </div>
+                
+            </div>
+            
+        <button type="button" class="submit-btn" id="submitBtn" onclick="submitQuiz()">Nộp Bài</button>
+        <button type="button" class="submit-btn" id="viewSolBtn" onclick="showPasswordPrompt()" style="background: #17a2b8;">Xem Đáp Án & Lời Giải</button>
+    </form>
+    
+    <div id="result"></div>
+    
+    <div id="passwordPrompt">
+        <h4>Mở Khóa Lời Giải</h4>
+        <p style="color: #856404; font-size: 14px; margin-top: 0;">Nhập mật khẩu từ Giáo viên để xem đáp án chi tiết.</p>
+        <input type="password" id="solPassword" placeholder="Nhập mật khẩu...">
+        <button type="button" onclick="checkPassword()">Xem</button>
+    </div>
+
+    <script>
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        if ((ua.indexOf("FBAN") === -1) && (ua.indexOf("FBAV") === -1) && (ua.indexOf("Zalo") === -1)) {
+            document.getElementById("zaloWarning").style.display = "none";
+        }
+
+        const GAS_URL = "https://script.google.com/macros/s/AKfycbxvHwT38uwnOI4NFPP17TZ_2Y3yLXWHAHnLi1bm13ZwZmgDjqwL1AbfxBhkWdHTgkVPhg/exec"; 
+        const correctAnswers = {"P1_Cau_1": "A", "P1_Cau_2": "A", "P1_Cau_3": "A", "P1_Cau_4": "A", "P1_Cau_5": "B", "P1_Cau_6": "A", "P1_Cau_7": "C", "P1_Cau_8": "B", "P1_Cau_9": "D", "P1_Cau_10": "B", "P1_Cau_11": "A", "P1_Cau_12": "A", "P1_Cau_13": "A", "P1_Cau_14": "A", "P1_Cau_15": "B", "P1_Cau_16": "A", "P1_Cau_17": "C", "P1_Cau_18": "A", "P1_Cau_19": "B", "P1_Cau_20": "C", "P1_Cau_21": "B", "P1_Cau_22": "A", "P1_Cau_23": "C", "P1_Cau_24": "B", "P1_Cau_25": "A", "P1_Cau_26": "C", "P1_Cau_27": "D", "P1_Cau_28": "D", "P1_Cau_29": "C", "P1_Cau_30": "C", "P1_Cau_31": "D", "P1_Cau_32": "D", "P1_Cau_33": "B", "P1_Cau_34": "B", "P1_Cau_35": "D", "P1_Cau_36": "D", "P1_Cau_37": "B", "P1_Cau_38": "B", "P1_Cau_39": "C", "P1_Cau_40": "D"};
+
+        // Trộn câu hỏi và phương án mỗi lần tải trang.
+        function shuffleArray(items) {
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+            return items;
+        }
+
+        function shuffleQuizOnLoad() {
+            const form = document.getElementById('quizForm');
+            if (!form) return;
+
+            // Trộn câu hỏi trong từng phần, không làm mất phần tử khi đổi vị trí.
+            const headings = Array.from(form.querySelectorAll(':scope > h3'));
+            headings.forEach(heading => {
+                const slots = [];
+                let node = heading.nextElementSibling;
+
+                while (node && node.tagName !== 'H3') {
+                    if (node.classList.contains('question')) slots.push(node);
+                    node = node.nextElementSibling;
+                }
+
+                if (slots.length > 1) {
+                    const shuffledQuestions = shuffleArray([...slots]);
+                    // Gỡ tất cả câu hỏi trước, rồi chèn lại theo thứ tự mới.
+                    // Cách này tránh lỗi mất câu do di chuyển node ngay trong vòng lặp.
+                    slots.forEach(question => question.remove());
+                    const fragment = document.createDocumentFragment();
+                    shuffledQuestions.forEach(question => fragment.appendChild(question));
+                    heading.after(fragment);
+                }
+
+                // Đánh lại số câu theo thứ tự hiển thị trong từng phần.
+                const questionsInSection = [];
+                node = heading.nextElementSibling;
+                while (node && node.tagName !== 'H3') {
+                    if (node.classList.contains('question')) questionsInSection.push(node);
+                    node = node.nextElementSibling;
+                }
+
+                questionsInSection.forEach((question, index) => {
+                    const numberLabel = question.querySelector('.question-text > b');
+                    if (numberLabel && /^Câu\s*\d+\s*:/i.test(numberLabel.textContent.trim())) {
+                        numberLabel.textContent = `Câu ${index + 1}:`;
+                    }
+                });
+            });
+
+            // Trộn phương án trắc nghiệm và cập nhật đáp án đúng tương ứng.
+            form.querySelectorAll('.question').forEach(question => {
+                const options = question.querySelector('.options');
+                if (!options) return;
+
+                const labels = Array.from(options.querySelectorAll(':scope > label')).filter(label =>
+                    label.querySelector('input[type="radio"][name^="P1_Cau_"]')
+                );
+                if (labels.length < 2) return;
+
+                const inputName = labels[0].querySelector('input[type="radio"]').name;
+                const oldCorrectValue = correctAnswers[inputName];
+                const correctLabel = labels.find(label => {
+                    const input = label.querySelector('input[type="radio"]');
+                    return input && input.value === oldCorrectValue;
+                });
+
+                const shuffledOptions = shuffleArray([...labels]);
+                shuffledOptions.forEach((label, index) => {
+                    const input = label.querySelector('input[type="radio"]');
+                    const letter = String.fromCharCode(65 + index);
+                    input.value = letter;
+
+                    const marker = label.querySelector('b');
+                    if (marker) marker.textContent = letter + '.';
+
+                    options.appendChild(label);
+                    if (label === correctLabel) correctAnswers[inputName] = letter;
+                });
+            });
+        }
+
+        shuffleQuizOnLoad();
+
+        let isSubmitted = false;
+        
+        function moveNext(current, nextId) {
+            if (current.value.length > 1) current.value = current.value.slice(0, 1);
+            if (current.value.length === 1 && nextId) document.getElementById(nextId).focus();
+        }
+        function movePrev(e, current, prevId) {
+            if (e.key === "Backspace" && current.value === "" && prevId) document.getElementById(prevId).focus();
+        }
+
+        let timeLimit = 45 * 60;
+        let timerEl = document.getElementById("timer");
+        let countdown = setInterval(function() {
+            if(isSubmitted) { clearInterval(countdown); return; }
+            if(timeLimit <= 0) {
+                clearInterval(countdown);
+                timerEl.innerHTML = "HẾT GIỜ!";
+                alert("Đã hết thời gian làm bài. Hệ thống tự động nộp bài!");
+                submitQuiz(true); 
+            } else {
+                let m = Math.floor(timeLimit / 60);
+                let s = timeLimit % 60;
+                timerEl.innerHTML = m.toString().padStart(2, '0') + ":" + s.toString().padStart(2, '0');
+                timeLimit--;
+            }
+        }, 1000);
+
+        function submitQuiz(autoSubmit = false) {
+            if(isSubmitted) return;
+            const name = document.getElementById('studentName').value;
+            const className = document.getElementById('studentClass').value;
+            
+            if(!autoSubmit && (!name || !className)) {
+                alert("Vui lòng nhập đầy đủ Họ tên và Lớp trước khi nộp!");
+                return;
+            }
+
+            isSubmitted = true;
+            timerEl.innerHTML = "ĐÃ NỘP BÀI";
+            const form = document.getElementById('quizForm');
+            let score = 0;
+            let answersDetail = [];
+
+            for (let i = 1; i <= 40; i++) {
+                const qName = `P1_Cau_${i}`;
+                const selected = form.querySelector(`input[name="${qName}"]:checked`);
+                let ans = selected ? selected.value : "Bỏ trống";
+                answersDetail.push(`${qName}:${ans}`);
+                const correctVal = correctAnswers[qName];
+                if (selected && selected.value === correctVal) score += 0.25;
+            }
+
+            const labels_tf = ['a', 'b', 'c', 'd'];
+            for (let i = 1; i <= 0; i++) {
+                let correctCount = 0;
+                labels_tf.forEach(l => {
+                    const qName = `P2_Cau_${i}_${l}`;
+                    if (correctAnswers[qName]) {
+                        const selected = form.querySelector(`input[name="${qName}"]:checked`);
+                        let ans = selected ? selected.value : "Bỏ trống";
+                        answersDetail.push(`${qName}:${ans}`);
+                        const correctVal = correctAnswers[qName];
+                        if (selected && selected.value === correctVal) correctCount++;
+                    }
+                });
+                if (correctCount === 1) score += 0.1;
+                else if (correctCount === 2) score += 0.25;
+                else if (correctCount === 3) score += 0.5;
+                else if (correctCount === 4) score += 1.0;
+            }
+
+            for (let i = 1; i <= 0; i++) {
+                const qName = `P3_Cau_${i}`;
+                if (correctAnswers[qName]) {
+                    let ans = "";
+                    for (let j = 1; j <= 4; j++) {
+                        const box = document.getElementById(`${qName}_${j}`);
+                        if (box && box.value) ans += box.value;
+                    }
+                    answersDetail.push(`${qName}:${ans || 'Bỏ trống'}`);
+                    
+                    let studentAns = ans.replace(/,/g, '.').replace(/\s+/g, '');
+                    let trueAns = correctAnswers[qName].replace(/,/g, '.').replace(/\s+/g, '');
+                    let isCorrect = (studentAns === trueAns && studentAns !== "");
+                    if (isCorrect) score += 0.5;
+                }
+            }
+
+            const finalScoreString = `${score.toFixed(2)}/10`;
+            const logString = `${finalScoreString} | CT: ${answersDetail.join(", ")}`;
+
+            document.getElementById('submitBtn').style.display = 'none';
+            const allInputs = document.querySelectorAll('#quizForm input, #quizForm textarea');
+            allInputs.forEach(input => input.disabled = true);
+
+            const resDiv = document.getElementById('result');
+            resDiv.style.display = 'block';
+            resDiv.innerHTML = `Đang gửi kết quả...`;
+
+            fetch(GAS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'name': name || "Vô danh (Hết giờ)",
+                    'className': className || "N/A",
+                    'score': logString
+                })
+            }).then(() => {
+                resDiv.innerHTML = `Nộp bài thành công!<br>Điểm của bạn: <span style="font-size: 24px; color: red;">${finalScoreString}</span>`;
+            }).catch(err => {
+                resDiv.innerHTML = `Nộp bài thành công (Mạng yếu).<br>Điểm: <span style="font-size: 24px; color: red;">${finalScoreString}</span>`;
+            });
+        }
+        
+        function showPasswordPrompt() {
+            document.getElementById('passwordPrompt').style.display = 'block';
+            document.getElementById('viewSolBtn').style.display = 'none';
+            document.getElementById('passwordPrompt').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function checkPassword() {
+            const entered = document.getElementById('solPassword').value;
+            if (entered === "0376") {
+                document.getElementById('passwordPrompt').style.display = 'none';
+                revealSolutions();
+            } else {
+                alert("Mật khẩu không chính xác! Vui lòng liên hệ Giáo viên.");
+            }
+        }
+
+        function revealSolutions() {
+            isSubmitted = true;
+            
+            document.getElementById('submitBtn').style.display = 'none';
+            const allInputs = document.querySelectorAll('#quizForm input, #quizForm textarea');
+            allInputs.forEach(input => input.disabled = true);
+
+            const form = document.getElementById('quizForm');
+            
+            for (let i = 1; i <= 40; i++) {
+                const qName = `P1_Cau_${i}`;
+                const correctVal = correctAnswers[qName];
+                const allRadios = form.querySelectorAll(`input[name="${qName}"]`);
+                allRadios.forEach(radio => {
+                    const lbl = radio.closest('label');
+                    if (radio.value === correctVal) {
+                        lbl.style.backgroundColor = '#d4edda';
+                        lbl.style.borderColor = '#28a745';
+                    } else if (radio.checked) {
+                        lbl.style.backgroundColor = '#f8d7da';
+                        lbl.style.borderColor = '#dc3545';
+                    } else {
+                        lbl.style.opacity = '0.5';
+                    }
+                });
+            }
+
+            const labels_tf = ['a', 'b', 'c', 'd'];
+            for (let i = 1; i <= 0; i++) {
+                labels_tf.forEach(l => {
+                    const qName = `P2_Cau_${i}_${l}`;
+                    if (correctAnswers[qName]) {
+                        const correctVal = correctAnswers[qName];
+                        const allRadios = form.querySelectorAll(`input[name="${qName}"]`);
+                        allRadios.forEach(radio => {
+                            const lbl = radio.closest('label');
+                            if (radio.value === correctVal) {
+                                lbl.style.backgroundColor = '#d4edda';
+                                lbl.style.color = '#155724';
+                            } else if (radio.checked) {
+                                lbl.style.backgroundColor = '#f8d7da';
+                                lbl.style.color = '#721c24';
+                            } else {
+                                lbl.style.opacity = '0.5';
+                            }
+                        });
+                    }
+                });
+            }
+
+            for (let i = 1; i <= 0; i++) {
+                const qName = `P3_Cau_${i}`;
+                if (correctAnswers[qName]) {
+                    let ans = "";
+                    let boxes = [];
+                    for (let j = 1; j <= 4; j++) {
+                        const box = document.getElementById(`${qName}_${j}`);
+                        if (box) {
+                            boxes.push(box);
+                            if (box.value) ans += box.value;
+                        }
+                    }
+                    
+                    let studentAns = ans.replace(/,/g, '.').replace(/\s+/g, '');
+                    let trueAns = correctAnswers[qName].replace(/,/g, '.').replace(/\s+/g, '');
+                    let isCorrect = (studentAns === trueAns && studentAns !== "");
+                    
+                    boxes.forEach(box => {
+                        if (isCorrect) {
+                            box.style.backgroundColor = '#d4edda';
+                            box.style.borderColor = '#28a745';
+                            box.style.color = '#155724';
+                        } else {
+                            box.style.backgroundColor = '#f8d7da';
+                            box.style.borderColor = '#dc3545';
+                            box.style.color = '#721c24';
+                        }
+                    });
+
+                    const group = document.querySelector(`#${qName}_1`).closest('.options');
+                    let correctDiv = document.createElement('div');
+                    correctDiv.style.marginTop = '10px';
+                    correctDiv.innerHTML = `<span style="color:#28a745; font-weight:bold; font-size:16px;">Đáp án đúng: ${correctAnswers[qName]}</span>`;
+                    group.appendChild(correctDiv);
+                }
+            }
+
+            const solutions = document.querySelectorAll('.solution-box');
+            solutions.forEach(box => box.style.display = 'block');
+        }
+    </script>
+</body>
+</html>
